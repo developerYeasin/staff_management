@@ -1,0 +1,39 @@
+.bg-dark.login {
+  height: 100vh;
+}
+
+.card.p-5.bg-dark.login-form {
+    box-shadow: 0 0 27px -3px #585858;
+}
+
+.form-group {
+  margin: 14px 0;
+}
+.form-group label {
+  width: 100%;
+}
+.form-group input {
+  width: 100%;
+  margin: 4px 0;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #111;
+  color: #fff;
+}
+
+button.btn-dark {
+    color: #fff;
+    background-color: #111111;
+    border-color: #111111;
+    text-transform: capitalize;
+    font-size: 18px;
+    padding: 6px 25px;
+}
+.google-btn{
+    border: none;
+    background: #111;
+    font-size: 18px;
+    padding: 6px 25px;
+    color: #fff;
+}
