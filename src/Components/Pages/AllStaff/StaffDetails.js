@@ -8,9 +8,9 @@ const StaffDetails = ({ handleClick, details }) => {
     <div className="staff-details">
       <div className="form-group">
         <p>First name: {details && details.firstName}</p>
-        <p>Last name: {details && details.firstName}</p>
-        <p>Username: {details && details.firstName}</p>
-        <p>Email : {details && details.firstName}</p>
+        <p>Last name: {details && details.lastName}</p>
+        <p>Username: {details && details.username}</p>
+        <p>Email : {details && details.email}</p>
         <p>
           Password: {passwordShow ? details.password : "*******"}
           <span
