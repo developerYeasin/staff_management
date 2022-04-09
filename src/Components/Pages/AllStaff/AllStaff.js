@@ -15,7 +15,7 @@ const AllStaff = () => {
   };
 
   useEffect(() => {
-    const member = JSON.parse(sessionStorage.getItem("user"));
+    const member = JSON.parse(sessionStorage.getItem("staffs"));
     setStaffs(member);
   }, []);
 
@@ -35,8 +35,6 @@ const AllStaff = () => {
                     staffs.map((staff, i) => (
                       <Staff handleClick={handleClick} key={i} staff={staff} />
                     ))}
-
-                  <Staff handleClick={handleClick} />
                 </div>
               )}
               {showDetails && (

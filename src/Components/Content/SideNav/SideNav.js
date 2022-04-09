@@ -1,20 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { MdDashboardCustomize } from "react-icons/md";
-import { FaUsers, FaHandsHelping } from "react-icons/fa";
-import { GiNetworkBars } from "react-icons/gi";
-import { HiChatAlt2, HiDocumentDuplicate, HiUserAdd } from "react-icons/hi";
+import { FaUsers } from "react-icons/fa";
+import { HiChatAlt2, HiUserAdd } from "react-icons/hi";
 import { FiLogOut } from "react-icons/fi";
 
 import "./SideNav.css";
+import { removeUserFromsession } from "../../../session";
 
-const SideNav = ({active}) => {
+const SideNav = ({ active }) => {
+  const [navi, setNavi] = useState(false);
+
+  // const navigate = useNavigate();
+
+  const signOut = () => {
+    console.log("ami");
+    removeUserFromsession();
+    setNavi(true);
+  };
+
   return (
     <div className="side-bar">
+      {navi && <Navigate to="/login" state={{ from: "/login" }} />}
       <h4>Staff management </h4>
       <ul className="side-menu">
         <li>
-          <Link to="/dashboard">
+          <Link to="/">
             <span>
               <MdDashboardCustomize />
             </span>{" "}
@@ -22,7 +33,10 @@ const SideNav = ({active}) => {
           </Link>
         </li>
         <li>
-          <Link to="/all_staff" className={active === "AllStaff" ? "active" : "un"} >
+          <Link
+            to="/all_staff"
+            className={active === "AllStaff" ? "active" : "un"}
+          >
             <span>
               <FaUsers />
             </span>
@@ -31,7 +45,10 @@ const SideNav = ({active}) => {
         </li>
 
         <li>
-          <Link to="/addMember" className={active === "AddMember" ? "active" :"un"}>
+          <Link
+            to="/addMember"
+            className={active === "AddMember" ? "active" : "un"}
+          >
             <span>
               <HiUserAdd />
             </span>
@@ -47,12 +64,12 @@ const SideNav = ({active}) => {
           </Link>
         </li>
         <li>
-          <Link to="/login">
+          <a onClick={signOut} style={{cursor: "pointer"}}>
             <span>
               <FiLogOut />
             </span>
             Log out
-          </Link>
+          </a>
         </li>
       </ul>
     </div>

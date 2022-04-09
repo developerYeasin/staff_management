@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import Maddle from '../../Content/Maddle/Maddle';
 import RightSide from '../../Content/RightSide/RightSide';
 import SideNav from '../../Content/SideNav/SideNav';
 
 const Home = () => {
+  
+
     return (
       <div className="container-fluid">
         <div className="row">

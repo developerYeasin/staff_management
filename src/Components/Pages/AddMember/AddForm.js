@@ -33,13 +33,13 @@ const AddForm = () => {
   };
 
   const addToSession = (staff) => {
-    if (!JSON.parse(window.sessionStorage.getItem("user"))) {
-      window.sessionStorage.setItem("user", JSON.stringify(staff));
+    if (!JSON.parse(window.sessionStorage.getItem("staffs"))) {
+      window.sessionStorage.setItem("staffs", JSON.stringify(staff));
     }
-    setMember(JSON.parse(window.sessionStorage.getItem("user")));
+    setMember(JSON.parse(window.sessionStorage.getItem("staffs")));
     const addNewMember = [member, staff];
 
-    window.sessionStorage.setItem("user", JSON.stringify(addNewMember));
+    window.sessionStorage.setItem("staffs", JSON.stringify(addNewMember));
     alert("Staff added");
   };
 
