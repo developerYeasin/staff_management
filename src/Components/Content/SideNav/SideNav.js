@@ -14,7 +14,7 @@ const SideNav = ({ active }) => {
   // const navigate = useNavigate();
 
   const signOut = () => {
-    console.log("ami");
+    
     removeUserFromsession();
     setNavi(true);
   };

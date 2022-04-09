@@ -24,11 +24,14 @@ const Login = () => {
     if(password.length < 8){
         alert("password should be 8");
     }
-    if (username === "123456789" && password === "123456789") {
+    if (username === "staff_manager" && password === "123456789") {
       const user = { username, password };
       setLoggedInUser(user);
       addUserInsession(user);
       navigate(from || "/", { replace: true });
+    }
+    else{
+      alert("password incurrect");
     }
   };
 

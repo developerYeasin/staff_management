@@ -17,6 +17,7 @@ export const getUserFromsession = (user) => {
 
 setTimeout(() => {
   removeUserFromsession();
+  sessionStorage.removeItem("staffs")
 }, 100000);
 
 

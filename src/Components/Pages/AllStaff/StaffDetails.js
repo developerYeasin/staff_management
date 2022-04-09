@@ -30,7 +30,10 @@ const StaffDetails = ({ handleClick, details }) => {
           </span>
         </p>
       </div>
-      <button onClick={() => handleClick()}>Back</button>
+      <button className="ms-5 btn btn-dark" onClick={() => handleClick()}>
+        Back
+      </button>
+      <button className="ms-5 btn btn-primary">update</button>
     </div>
   );
 };

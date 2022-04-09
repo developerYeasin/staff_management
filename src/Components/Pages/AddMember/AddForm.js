@@ -19,7 +19,8 @@ const AddForm = () => {
     }
     if (password === "") {
       alert("password need");
-    } else {
+    } 
+    if (firstName && email) {
       const newMemberInfo = {
         firstName,
         lastName,
