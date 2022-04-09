@@ -44,13 +44,13 @@ const Login = () => {
     const user = result.user;
       setLoggedInUser(user);
       addUserInsession(user);
-      navigate(from || "/", { replace: true });
+      navigate( "/", { replace: true });
   }).catch((error) => {
   });
   }
 
  useEffect(() => {
-   loggedInUser && loggedInUser.username && navigate(from && from, { replace: true });
+   loggedInUser && loggedInUser.username && navigate(from || "/", { replace: true });
  }, [loggedInUser]);
 
     return (
