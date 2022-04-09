@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-  return loggedInUser.username  ? (
+  return loggedInUser.username || loggedInUser.email  ? (
     children
   ) : (
     <Navigate to="/login" state={{ from: location }} />

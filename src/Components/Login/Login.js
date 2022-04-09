@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
 import { addUserInsession } from "../../session";
+import {signInWithPopup} from "firebase/auth";
+import { auth, provider } from "../../firebase";
 
 const Login = () => {
    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -34,6 +36,18 @@ const Login = () => {
       alert("password incurrect");
     }
   };
+
+
+  const sdinInGoogle = () => {
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    const user = result.user;
+      setLoggedInUser(user);
+      addUserInsession(user);
+      navigate(from || "/", { replace: true });
+  }).catch((error) => {
+  });
+  }
 
  useEffect(() => {
    loggedInUser && loggedInUser.username && navigate(from && from, { replace: true });
@@ -73,7 +87,7 @@ const Login = () => {
                     </button>
                   </div>
                 </form>
-                <button className="google-btn mt-2">
+                <button onClick={sdinInGoogle} className="google-btn mt-2">
                   <FcGoogle /> Logoin With Google
                 </button>
               </div>
